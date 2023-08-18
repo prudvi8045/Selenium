@@ -1,0 +1,57 @@
+For Insync setup
+cd insync/contrib/docker-compose
+ 
+./setup_insync.sh viraj CU085_858c1ce3 4443 ens18 False True True
+
+For DCP setup
+cd DCP_dev
+
+./setup_dcp.sh viraj.drtst.in SS070_hf1-2021-08-18-11-42-37 4443 ens18
+
+
+
+          "ip":"insync-viraj.drtst.in",#qamicro.drtst.org", #insync-viraj.drtst.in
+          "username" : "support.admin@drtst.in",#administrator",
+          "password" : "Druv@1234567",#qawzsx1",
+		  
+		  
+
+pycharm files loc
+insync\src\inSyncQA\TestModules\sfdcsfapexlib.py
+D:\workspace\Automation\insync\src\inSyncQA\TestModules\sfdcsfapexlib.py
+
+
+Github insync repo loc:
+C:\Salesforce\Insync_Git_repo
+
+
+
+git push -u origin branch_name_that_you_want_to_push
+
+
+
+to add sqa thing :
+
+add sqa option to the files
+/opt/salt/pillar/qa/sfmonk_drtst_org.sls
+/opt/salt/pillar/qapri/sfmonk_drtst_org.sls
+/opt/salt/pillar/qa/sfmonk_drtst_org-enc.sls
+/opt/salt/pillar/qapri/sfmonk_drtst_org-enc.sls
+
+stop bg0-cloud_name machine
+
+start bg0-cloud_name machine
+
+run these 2 commands in salt machine:
+
+/opt/salt/bin/sync_cloud.bash cloud_name
+
+/opt/salt/bin/do_cloud_ops.py -o cleanup -c cloud_name
+
+check sqa variable is there by ezui command - group import salt pillar
+
+if sqa is present then run group render and group apply
+
+
+
+
